@@ -1,0 +1,45 @@
+// Миксин подключает шрифты автоматически
+@mixin font($font_name, $file_name, $weight, $style) {
+     @font-face {
+          font-family: $font_name;
+          font-display: swap;
+          src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+          font-weight: #{$weight};
+          font-style: #{$style};
+     }
+}
+@import "fonts";
+
+.header {
+}
+.header-one {
+     font-size: 125px;
+     color: blue;
+     @media (max-width: 768px) {
+          font-size: 100px;
+     }
+}
+.header-two {
+     font-size: 35px;
+     color: red;
+     @media (max-width: 768px) {
+          font-size: 5px;
+     }
+}
+.header-three {
+     font-size: 15px;
+     color: yellow;
+     @media (max-width: 992px) {
+          color: black;
+     }
+}
+
+.footer {
+     text-align: center;
+}
+.footer-one {
+     text-align: right;
+}
+.footer-two {
+     text-transform: uppercase;
+}
